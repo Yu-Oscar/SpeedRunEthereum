@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat /Users/oscaryu/Documents/GitHub/SpeedRunEthereum/challenge-2-token-vendor/README.md)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --turbopack --skip-install)",
+      "Bash(mkdir -p unified-dapp/landing-app)",
+      "Bash(rm -rf unified-dapp/landing-app)",
+      "Bash(yarn create next-app landing --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --eslint)",
+      "Bash(yarn create next-app unified-dapp/landing --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --eslint)",
+      "Bash(mkdir -p /Users/oscaryu/Documents/GitHub/SpeedRunEthereum/unified-dapp/landing)",
+      "Bash(yarn install)",
+      "Bash(tree -L 3 -I 'node_modules|.next|.git' unified-dapp/landing/)",
+      "Bash(yarn dev)",
+      "Bash(yarn add -D @tailwindcss/postcss)",
+      "Bash(ls -la challenge-tokenization/packages/nextjs/*.{json,ts})"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
