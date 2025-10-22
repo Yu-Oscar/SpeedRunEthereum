@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
-import { useSessionStorage } from "usehooks-ts";
+import { useEffect, useMemo, useState } from "react";
 import { BarsArrowUpIcon } from "@heroicons/react/20/solid";
 import { ContractUI } from "~~/app/debug/_components/contract";
 import { ContractName, GenericContract } from "~~/utils/scaffold-eth/contract";
@@ -19,17 +18,43 @@ export function DebugContracts() {
     [contractsData],
   );
 
-  const [selectedContract, setSelectedContract] = useSessionStorage<ContractName>(
-    selectedContractStorageKey,
-    contractNames[0],
-    { initializeWithValue: false },
-  );
+  const [selectedContract, setSelectedContract] = useState<ContractName | undefined>(undefined);
+  const [isClient, setIsClient] = useState(false);
+
+  // Initialize client-side state
+  useEffect(() => {
+    setIsClient(true);
+    if (contractNames.length > 0) {
+      const stored = sessionStorage.getItem(selectedContractStorageKey);
+      if (stored && contractNames.includes(stored as ContractName)) {
+        setSelectedContract(stored as ContractName);
+      } else {
+        setSelectedContract(contractNames[0]);
+      }
+    }
+  }, [contractNames]);
+
+  // Save to sessionStorage when selectedContract changes
+  useEffect(() => {
+    if (isClient && selectedContract) {
+      sessionStorage.setItem(selectedContractStorageKey, selectedContract);
+    }
+  }, [selectedContract, isClient]);
 
   useEffect(() => {
-    if (!contractNames.includes(selectedContract)) {
+    if (selectedContract && !contractNames.includes(selectedContract)) {
       setSelectedContract(contractNames[0]);
     }
-  }, [contractNames, selectedContract, setSelectedContract]);
+  }, [contractNames, selectedContract]);
+
+  // Don't render until client-side state is initialized
+  if (!isClient || !selectedContract) {
+    return (
+      <div className="flex flex-col gap-y-6 lg:gap-y-8 py-8 lg:py-12 justify-center items-center">
+        <div className="loading loading-spinner loading-lg"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col gap-y-6 lg:gap-y-8 py-8 lg:py-12 justify-center items-center">
