@@ -12,6 +12,12 @@ const nextConfig: NextConfig = {
   webpack: config => {
     config.resolve.fallback = { fs: false, net: false, tls: false };
     config.externals.push("pino-pretty", "lokijs", "encoding");
+
+    // Add polyfill for indexedDB to avoid errors during SSR
+    if (!config.resolve.alias) {
+      config.resolve.alias = {};
+    }
+
     return config;
   },
 };

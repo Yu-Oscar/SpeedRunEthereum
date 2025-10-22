@@ -1,4 +1,4 @@
-import { wagmiConnectors } from "./wagmiConnectors";
+import { getWagmiConnectors } from "./wagmiConnectors";
 import { Chain, createClient, fallback, http } from "viem";
 import { hardhat, mainnet } from "viem/chains";
 import { createConfig } from "wagmi";
@@ -12,26 +12,52 @@ export const enabledChains = targetNetworks.find((network: Chain) => network.id 
   ? targetNetworks
   : ([...targetNetworks, mainnet] as const);
 
-export const wagmiConfig = createConfig({
-  chains: enabledChains,
-  connectors: wagmiConnectors,
-  ssr: true,
-  client: ({ chain }) => {
-    let rpcFallbacks = [http()];
-    const rpcOverrideUrl = (scaffoldConfig.rpcOverrides as ScaffoldConfig["rpcOverrides"])?.[chain.id];
-    if (rpcOverrideUrl) {
-      rpcFallbacks = [http(rpcOverrideUrl), http()];
-    } else {
-      const alchemyHttpUrl = getAlchemyHttpUrl(chain.id);
-      if (alchemyHttpUrl) {
-        const isUsingDefaultKey = scaffoldConfig.alchemyApiKey === DEFAULT_ALCHEMY_API_KEY;
-        rpcFallbacks = isUsingDefaultKey ? [http(), http(alchemyHttpUrl)] : [http(alchemyHttpUrl), http()];
-      }
-    }
-    return createClient({
-      chain,
-      transport: fallback(rpcFallbacks),
-      ...(chain.id !== (hardhat as Chain).id ? { pollingInterval: scaffoldConfig.pollingInterval } : {}),
-    });
-  },
-});
+let _wagmiConfig: ReturnType<typeof createConfig> | null = null;
+
+export const wagmiConfig = typeof window === "undefined"
+  ? createConfig({
+      chains: enabledChains,
+      connectors: getWagmiConnectors(),
+      ssr: true,
+      client: ({ chain }) => {
+        let rpcFallbacks = [http()];
+        const rpcOverrideUrl = (scaffoldConfig.rpcOverrides as ScaffoldConfig["rpcOverrides"])?.[chain.id];
+        if (rpcOverrideUrl) {
+          rpcFallbacks = [http(rpcOverrideUrl), http()];
+        } else {
+          const alchemyHttpUrl = getAlchemyHttpUrl(chain.id);
+          if (alchemyHttpUrl) {
+            const isUsingDefaultKey = scaffoldConfig.alchemyApiKey === DEFAULT_ALCHEMY_API_KEY;
+            rpcFallbacks = isUsingDefaultKey ? [http(), http(alchemyHttpUrl)] : [http(alchemyHttpUrl), http()];
+          }
+        }
+        return createClient({
+          chain,
+          transport: fallback(rpcFallbacks),
+          ...(chain.id !== (hardhat as Chain).id ? { pollingInterval: scaffoldConfig.pollingInterval } : {}),
+        });
+      },
+    })
+  : (_wagmiConfig ||= createConfig({
+      chains: enabledChains,
+      connectors: getWagmiConnectors(),
+      ssr: true,
+      client: ({ chain }) => {
+        let rpcFallbacks = [http()];
+        const rpcOverrideUrl = (scaffoldConfig.rpcOverrides as ScaffoldConfig["rpcOverrides"])?.[chain.id];
+        if (rpcOverrideUrl) {
+          rpcFallbacks = [http(rpcOverrideUrl), http()];
+        } else {
+          const alchemyHttpUrl = getAlchemyHttpUrl(chain.id);
+          if (alchemyHttpUrl) {
+            const isUsingDefaultKey = scaffoldConfig.alchemyApiKey === DEFAULT_ALCHEMY_API_KEY;
+            rpcFallbacks = isUsingDefaultKey ? [http(), http(alchemyHttpUrl)] : [http(alchemyHttpUrl), http()];
+          }
+        }
+        return createClient({
+          chain,
+          transport: fallback(rpcFallbacks),
+          ...(chain.id !== (hardhat as Chain).id ? { pollingInterval: scaffoldConfig.pollingInterval } : {}),
+        });
+      },
+    }));

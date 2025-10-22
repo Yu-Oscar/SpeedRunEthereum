@@ -12,7 +12,8 @@
       "Bash(tree -L 3 -I 'node_modules|.next|.git' unified-dapp/landing/)",
       "Bash(yarn dev)",
       "Bash(yarn add -D @tailwindcss/postcss)",
-      "Bash(ls -la challenge-tokenization/packages/nextjs/*.{json,ts})"
+      "Bash(ls -la challenge-tokenization/packages/nextjs/*.{json,ts})",
+      "Bash(yarn build:*)"
     ],
     "deny": [],
     "ask": []
