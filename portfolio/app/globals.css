@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #1a4f52;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+}
+
+/* Pixel border utility */
+.pixel-border {
+  border: 3px solid currentColor;
+  box-shadow:
+    3px 3px 0px rgba(0, 0, 0, 0.3),
+    inset -2px -2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.pixel-border:hover {
+  box-shadow:
+    5px 5px 0px rgba(0, 0, 0, 0.3),
+    inset -2px -2px 0px rgba(0, 0, 0, 0.2);
+  transform: translate(-2px, -2px);
+  transition: all 0.1s;
+}
+
+/* Glowing text effect */
+.glow-text {
+  text-shadow:
+    0 0 10px rgba(125, 224, 230, 0.8),
+    0 0 20px rgba(125, 224, 230, 0.4);
+}
+
+/* Pixel divider */
+.pixel-divider {
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    #7DE0E6 0px,
+    #7DE0E6 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  margin: 2rem 0;
+}
+
+/* Retro button styles */
+.btn-retro {
+  @apply px-4 py-2 font-arcade font-bold text-sm uppercase;
+  background: #7DE0E6;
+  color: #007B7F;
+  border: 3px solid #007B7F;
+  cursor: pointer;
+  transition: all 0.1s;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.btn-retro:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.btn-retro:active {
+  transform: translate(0, 0);
+  box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.btn-retro-purple {
+  @apply px-4 py-2 font-arcade font-bold text-sm uppercase;
+  background: #C9B6FF;
+  color: #007B7F;
+  border: 3px solid #007B7F;
+  cursor: pointer;
+  transition: all 0.1s;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.btn-retro-purple:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.btn-retro-yellow {
+  @apply px-4 py-2 font-arcade font-bold text-sm uppercase;
+  background: #FFD65A;
+  color: #007B7F;
+  border: 3px solid #007B7F;
+  cursor: pointer;
+  transition: all 0.1s;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.btn-retro-yellow:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
+}

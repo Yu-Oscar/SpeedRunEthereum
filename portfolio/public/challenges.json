@@ -1,0 +1,47 @@
+[
+  {
+    "id": 0,
+    "title": "Challenge 0: Tokenization",
+    "description": "Learn about Scaffold-ETH 2, HardHat compilation and deployment, React app development with Ethereum components and hooks, and NFT deployment to public networks by creating a unique token.",
+    "image": "/tokenization.svg",
+    "liveWebsite": "https://challenge-0-tokenization.vercel.app/",
+    "code": "https://github.com/Yu-Oscar/SpeedRunEthereum/blob/main/challenge-0-tokenization/packages/hardhat/contracts/YourCollectible.sol",
+    "contract": "0x9D00631981449FC23a70312A93c1009581222B99"
+  },
+  {
+    "id": 1,
+    "title": "Challenge 1: Decentralized Staking",
+    "description": "Learn about trustless coordination, decentralized applications, and group funding mechanisms where users can work together based only on code by building a contract for group funding efforts.",
+    "image": "/stakingToken.svg",
+    "liveWebsite": "https://challenge-1-decentralized-staking-tau-olive.vercel.app/",
+    "code": "https://github.com/Yu-Oscar/SpeedRunEthereum/blob/main/challenge-1-decentralized-staking/packages/hardhat/contracts/Staker.sol",
+    "contract": "0xDb9b14eCD9feEc63B8AAc66c6985134F73a7F0A7"
+  },
+  {
+    "id": 2,
+    "title": "Challenge 2: Token Vendor",
+    "description": "Learn about ERC20 tokens, the approve pattern for token transfers, and contract-to-contract interactions by building a vending machine that buys and sells a decentralized digital currency.",
+    "image": "/tokenVendor.svg",
+    "liveWebsite": "https://challenge-2-token-vendor-mauve-theta.vercel.app/",
+    "code": "https://github.com/Yu-Oscar/SpeedRunEthereum/blob/main/challenge-2-token-vendor/packages/hardhat/contracts/Vendor.sol",
+    "contract": "0xe8F1b5762E7d9AA548f5992b319925247ef70051"
+  },
+  {
+    "id": 3,
+    "title": "Challenge 3: Dice Game",
+    "description": "Learn about randomness on deterministic blockchains, the weaknesses of using block hash as a randomness source, and how to predict and exploit weak randomness implementations to guarantee winning outcomes.",
+    "image": "/diceGame.svg",
+    "liveWebsite": "https://challenge-3-dice-game-sooty.vercel.app/",
+    "code": "https://github.com/Yu-Oscar/SpeedRunEthereum/blob/main/challenge-3-dice-game/packages/hardhat/contracts/RiggedRoll.sol",
+    "contract": "0x46c03d4bEeAE6255Ef73b05d4dcEe49993AC36Ab"
+  },
+  {
+    "id": 4,
+    "title": "Challenge 4: DEX",
+    "description": "Learn about automated market makers, liquidity pools with reserve-based pricing models, token swaps between assets, and how liquidity provider tokens represent shares of reserves and accumulated fees.",
+    "image": "/dex.svg",
+    "liveWebsite": "https://challenge-4-dex-two-alpha.vercel.app/",
+    "code": "https://github.com/Yu-Oscar/SpeedRunEthereum/blob/main/challenge-4-dex/packages/hardhat/contracts/DEX.sol",
+    "contract": "0x8D31f9875303C79EcF772873dCD2124D58262fcf"
+  }
+]
