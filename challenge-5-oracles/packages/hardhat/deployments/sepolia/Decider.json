@@ -1,0 +1,173 @@
+{
+  "address": "0x30616713799314b77a3AfcC37E4b645D16368011",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_oracle",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "assertionId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "resolvedValue",
+          "type": "bool"
+        }
+      ],
+      "name": "DisputeSettled",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "oracle",
+      "outputs": [
+        {
+          "internalType": "contract IOptimisticOracle",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOracle",
+          "type": "address"
+        }
+      ],
+      "name": "setOracle",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "assertionId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "resolvedValue",
+          "type": "bool"
+        }
+      ],
+      "name": "settleDispute",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0x0aa9ac2dc86149c3fc3c78001d545561b00a327d788e4860b9e87e2c28961eaa",
+  "receipt": {
+    "to": null,
+    "from": "0xEe3869d7dFc3e1a2CB6399E00C6a39E019E1A80b",
+    "contractAddress": "0x30616713799314b77a3AfcC37E4b645D16368011",
+    "transactionIndex": 86,
+    "gasUsed": "263881",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x7c09c8802e5d2190eba7b36500fc94149dee3c819e66fc718838e87005b24b86",
+    "transactionHash": "0x0aa9ac2dc86149c3fc3c78001d545561b00a327d788e4860b9e87e2c28961eaa",
+    "logs": [],
+    "blockNumber": 10260158,
+    "cumulativeGasUsed": "9978988",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xaB35a9175a50cf75d70B467fF51795F62cd154eb"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "9fcc1190b90bc26fb4272727bfdaa3b9",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_oracle\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assertionId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"resolvedValue\",\"type\":\"bool\"}],\"name\":\"DisputeSettled\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"oracle\",\"outputs\":[{\"internalType\":\"contract IOptimisticOracle\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOracle\",\"type\":\"address\"}],\"name\":\"setOracle\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"assertionId\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"resolvedValue\",\"type\":\"bool\"}],\"name\":\"settleDispute\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"settleDispute(uint256,bool)\":{\"params\":{\"assertionId\":\"The ID of the assertion to settle\",\"resolvedValue\":\"The true/false outcome determined by the decider\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"settleDispute(uint256,bool)\":{\"notice\":\"Settle a dispute by determining the true/false outcome\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/02_Optimistic/Decider.sol\":\"Decider\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/02_Optimistic/Decider.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity >=0.8.0 <0.9.0;\\n\\ncontract Decider {\\n    address public owner;\\n    IOptimisticOracle public oracle;\\n\\n    event DisputeSettled(uint256 indexed assertionId, bool resolvedValue);\\n\\n    constructor(address _oracle) {\\n        owner = msg.sender;\\n        oracle = IOptimisticOracle(_oracle);\\n    }\\n\\n    /**\\n     * @notice Settle a dispute by determining the true/false outcome\\n     * @param assertionId The ID of the assertion to settle\\n     * @param resolvedValue The true/false outcome determined by the decider\\n     */\\n    function settleDispute(uint256 assertionId, bool resolvedValue) external {\\n        require(assertionId >= 1, \\\"Invalid assertion ID\\\");\\n\\n        // Call the oracle's settleAssertion function\\n        oracle.settleAssertion(assertionId, resolvedValue);\\n\\n        emit DisputeSettled(assertionId, resolvedValue);\\n    }\\n\\n    function setOracle(address newOracle) external {\\n        require(msg.sender == owner, \\\"Only owner can set oracle\\\");\\n        oracle = IOptimisticOracle(newOracle);\\n    }\\n\\n    /**\\n     * @notice Allow the contract to receive ETH\\n     */\\n    receive() external payable {}\\n}\\n\\ninterface IOptimisticOracle {\\n    function settleAssertion(uint256, bool) external;\\n}\\n\",\"keccak256\":\"0x83fb5fb04f9e279460ed8c2becd4f2ed3947a4b337aa2b2c2be72943363b4cfa\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161039838038061039883398101604081905261002f91610062565b60008054336001600160a01b031991821617909155600180549091166001600160a01b0392909216919091179055610092565b60006020828403121561007457600080fd5b81516001600160a01b038116811461008b57600080fd5b9392505050565b6102f7806100a16000396000f3fe6080604052600436106100435760003560e01c80637adbf9731461004f5780637dc0d1d0146100715780638da5cb5b146100ad57806392305435146100cd57600080fd5b3661004a57005b600080fd5b34801561005b57600080fd5b5061006f61006a36600461025c565b6100ed565b005b34801561007d57600080fd5b50600154610091906001600160a01b031681565b6040516001600160a01b03909116815260200160405180910390f35b3480156100b957600080fd5b50600054610091906001600160a01b031681565b3480156100d957600080fd5b5061006f6100e836600461028c565b61016e565b6000546001600160a01b0316331461014c5760405162461bcd60e51b815260206004820152601960248201527f4f6e6c79206f776e65722063616e20736574206f7261636c650000000000000060448201526064015b60405180910390fd5b600180546001600160a01b0319166001600160a01b0392909216919091179055565b60018210156101b65760405162461bcd60e51b8152602060048201526014602482015273125b9d985b1a5908185cdcd95c9d1a5bdb88125160621b6044820152606401610143565b60015460405163db4295b760e01b81526004810184905282151560248201526001600160a01b039091169063db4295b790604401600060405180830381600087803b15801561020457600080fd5b505af1158015610218573d6000803e3d6000fd5b50505050817faa76612075dcf5624c76b21b3b0f6babbeee4e6b6197fb4fb4a2a5654724812a82604051610250911515815260200190565b60405180910390a25050565b60006020828403121561026e57600080fd5b81356001600160a01b038116811461028557600080fd5b9392505050565b6000806040838503121561029f57600080fd5b82359150602083013580151581146102b657600080fd5b80915050925092905056fea2646970667358221220df429ac8e47150c8c85951bd8fc77176f0666a75f4a159519e06068afd5a16d164736f6c63430008140033",
+  "deployedBytecode": "0x6080604052600436106100435760003560e01c80637adbf9731461004f5780637dc0d1d0146100715780638da5cb5b146100ad57806392305435146100cd57600080fd5b3661004a57005b600080fd5b34801561005b57600080fd5b5061006f61006a36600461025c565b6100ed565b005b34801561007d57600080fd5b50600154610091906001600160a01b031681565b6040516001600160a01b03909116815260200160405180910390f35b3480156100b957600080fd5b50600054610091906001600160a01b031681565b3480156100d957600080fd5b5061006f6100e836600461028c565b61016e565b6000546001600160a01b0316331461014c5760405162461bcd60e51b815260206004820152601960248201527f4f6e6c79206f776e65722063616e20736574206f7261636c650000000000000060448201526064015b60405180910390fd5b600180546001600160a01b0319166001600160a01b0392909216919091179055565b60018210156101b65760405162461bcd60e51b8152602060048201526014602482015273125b9d985b1a5908185cdcd95c9d1a5bdb88125160621b6044820152606401610143565b60015460405163db4295b760e01b81526004810184905282151560248201526001600160a01b039091169063db4295b790604401600060405180830381600087803b15801561020457600080fd5b505af1158015610218573d6000803e3d6000fd5b50505050817faa76612075dcf5624c76b21b3b0f6babbeee4e6b6197fb4fb4a2a5654724812a82604051610250911515815260200190565b60405180910390a25050565b60006020828403121561026e57600080fd5b81356001600160a01b038116811461028557600080fd5b9392505050565b6000806040838503121561029f57600080fd5b82359150602083013580151581146102b657600080fd5b80915050925092905056fea2646970667358221220df429ac8e47150c8c85951bd8fc77176f0666a75f4a159519e06068afd5a16d164736f6c63430008140033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "settleDispute(uint256,bool)": {
+        "params": {
+          "assertionId": "The ID of the assertion to settle",
+          "resolvedValue": "The true/false outcome determined by the decider"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "settleDispute(uint256,bool)": {
+        "notice": "Settle a dispute by determining the true/false outcome"
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 1562,
+        "contract": "contracts/02_Optimistic/Decider.sol:Decider",
+        "label": "owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 1565,
+        "contract": "contracts/02_Optimistic/Decider.sol:Decider",
+        "label": "oracle",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_contract(IOptimisticOracle)1650"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_contract(IOptimisticOracle)1650": {
+        "encoding": "inplace",
+        "label": "contract IOptimisticOracle",
+        "numberOfBytes": "20"
+      }
+    }
+  }
+}
